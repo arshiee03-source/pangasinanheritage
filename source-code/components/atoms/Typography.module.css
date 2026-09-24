@@ -1,0 +1,8 @@
+.heading { margin: 0 0 var(--space-3); line-height: 1.2; }
+/* fluid type: scales smoothly between mobile and desktop without breakpoints */
+.h1 { font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.75rem); }
+.h2 { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2rem); }
+.h3 { font-size: clamp(1.15rem, 1rem + .7vw, 1.4rem); }
+.h4 { font-size: 1.05rem; }
+.muted { color: var(--color-muted); }
+.small { font-size: .875rem; }

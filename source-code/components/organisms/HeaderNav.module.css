@@ -1,0 +1,12 @@
+.header { background: var(--color-surface); border-bottom: 1px solid var(--color-border); position: sticky; top: 0; z-index: 10; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 60px; }
+.brand { font-weight: 800; color: var(--color-primary); text-decoration: none; font-size: 1.15rem; }
+.toggle { min-width: 44px; min-height: 44px; display: grid; place-items: center; background: none; border: 0; cursor: pointer; color: var(--color-text); }
+.nav { display: none; width: 100%; }
+.nav.open { display: block; padding-bottom: var(--space-3); }
+.nav ul { list-style: none; margin: 0; padding: 0; }
+@media (min-width: 48em) {
+  .toggle { display: none; }
+  .nav, .nav.open { display: block; width: auto; padding: 0; }
+  .nav ul { display: flex; gap: var(--space-2); }
+}

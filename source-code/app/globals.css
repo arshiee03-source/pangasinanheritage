@@ -1,0 +1,14 @@
+@import '../styles/tokens.css';
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); line-height: 1.6; }
+img { max-width: 100%; height: auto; display: block; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }
+.container { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--color-primary); color: #fff; padding: var(--space-3) var(--space-4); z-index: 100; }
+.skip-link:focus { left: var(--space-2); top: var(--space-2); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+main { padding-block: var(--space-8); }
+.hero { background: var(--color-primary); color: #fff; padding-block: var(--space-12); }
+.hero p { max-width: 40rem; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }

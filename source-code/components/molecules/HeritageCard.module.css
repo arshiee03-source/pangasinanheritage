@@ -1,0 +1,10 @@
+.wrap { container-type: inline-size; height: 100%; } /* card reacts to ITS container, not the viewport */
+.card { display: grid; height: 100%; background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); position: relative; }
+.body { padding: var(--space-4); }
+.loc { display: inline-flex; align-items: center; gap: var(--space-1); }
+.link { color: var(--color-text); text-decoration: none; }
+.link::after { content: ''; position: absolute; inset: 0; } /* whole card is clickable, single tab stop */
+.link:hover { text-decoration: underline; }
+/* wide container -> image left, text right */
+@container (min-width: 36rem) { .card { grid-template-columns: 2fr 3fr; } }
