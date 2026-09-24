@@ -1,6 +1,8 @@
 // To use your own photo: put it in public/images/ and change the `image` value (e.g. '/images/hundred-islands.jpg').
 // Content is decoupled from UI: edit this file (or swap for a CMS/API) without touching components.
-export const sites = [
+const base = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
+const rawSites = [
   { slug: 'hundred-islands', image: '/images/island.jpg', name: 'Hundred Islands National Park', municipality: 'Alaminos', category: 'Islands',
     summary: 'A cluster of small islands in Lingayen Gulf, popular for island hopping, snorkeling and kayaking.',
     details: 'Best explored by boat from the Lucap Wharf. Visit early in the day for calmer waters and fewer crowds.' },
@@ -20,4 +22,7 @@ export const sites = [
     summary: 'A pale-sand beach with shallow, calm water on the Anda peninsula.',
     details: 'Bring sun protection and plan for limited shade during midday.' },
 ];
+
+// Prefix every image path with the GitHub Pages basePath (e.g. /pangasinanheritage)
+export const sites = rawSites.map((s) => ({ ...s, image: `${base}${s.image}` }));
 export const getSite = (slug) => sites.find((s) => s.slug === slug);
